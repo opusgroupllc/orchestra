@@ -1,12 +1,15 @@
-define(['chaplin'], function(Chaplin) {
+define(function(require) {
+  'use strict';
+
+  var Chaplin = require('chaplin'),
+      User = require('models/user'),
+      LoginView = require('views/login');
+
   var SessionController = Chaplin.Controller.extend({
+    loginView: null,
+
     new: function() {
-      $("form").submit(function(event) {
-        console.log("hai.");
-        
-        // prevent the form from being actually posted
-        event.preventDefault();
-      });
+      this.loginView = new LoginView();
     }
   });
 

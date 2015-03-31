@@ -14,12 +14,13 @@ task :copy do
   [ "./bower_components/jquery/dist/jquery.min.js",
     "./bower_components/jquery/dist/jquery.min.map",
     "./bower_components/requirejs/require.js",
+    "./bower_components/requirejs-text/text.js",
     "./bower_components/backbone-amd/backbone-min.js",
     "./bower_components/backbone-amd/backbone-min.map",
     "./bower_components/underscore-amd/underscore-min.js",
     "./bower_components/underscore-amd/underscore-min.map",
     "./bower_components/chaplin/chaplin.min.js",
-    "./bower_components/handlebars/handlebars.js"
+    "./bower_components/require-handlebars-plugin/hbs/handlebars.js"
   ].each do |file|
     cp(file, "./client/js/vendor")
   end

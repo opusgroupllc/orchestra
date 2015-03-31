@@ -2,6 +2,6 @@ define(function() {
   'use strict';
 
   return function(match) {
-    match('', 'session#new');
+    match('login', 'session#new');
   }
 });

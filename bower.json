@@ -18,8 +18,9 @@
     "requirejs": "latest",
     "jquery": "latest",
     "chaplin": "~1.0.0",
-    "handlebars": "~1.0.0",
+    "require-handlebars-plugin": "latest",
     "backbone-amd": "latest",
-    "underscore-amd": "latest"
+    "underscore-amd": "latest",
+    "requirejs-text": "~2.0.14"
   }
 }
