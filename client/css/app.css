@@ -8567,3 +8567,23 @@ button.close {
     display: none !important;
   }
 }
+/* line 3, ../../sass/app.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 1, ../../sass/_login.scss */
+.login {
+  height: 100%;
+}
+/* line 4, ../../sass/_login.scss */
+.login .container {
+  height: 100%;
+  display: table;
+}
+/* line 9, ../../sass/_login.scss */
+.login .row {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
