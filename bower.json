@@ -17,6 +17,8 @@
   "dependencies": {
     "requirejs": "latest",
     "jquery": "latest",
+    "chaplin": "~1.0.0",
+    "handlebars": "~1.0.0",
     "backbone-amd": "latest",
     "underscore-amd": "latest"
   }

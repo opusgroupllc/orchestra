@@ -17,7 +17,9 @@ task :copy do
     "./bower_components/backbone-amd/backbone-min.js",
     "./bower_components/backbone-amd/backbone-min.map",
     "./bower_components/underscore-amd/underscore-min.js",
-    "./bower_components/underscore-amd/underscore-min.map"
+    "./bower_components/underscore-amd/underscore-min.map",
+    "./bower_components/chaplin/chaplin.min.js",
+    "./bower_components/handlebars/handlebars.js"
   ].each do |file|
     cp(file, "./client/js/vendor")
   end
