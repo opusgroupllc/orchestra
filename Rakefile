@@ -22,3 +22,17 @@ task :copy do
     cp(file, "./client/js/vendor")
   end
 end
+
+multitask :serve => ['server:serve', 'client:serve']
+
+namespace :server do
+  task :serve do
+    sh "ruby server/app.rb"
+  end
+end
+
+namespace :client do
+  task :serve do
+    sh "ruby app.rb"
+  end
+end
