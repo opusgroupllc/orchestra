@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "0.0.0",
+  "authors": [
+    "Joshua K. Farrar <joshua@sent1nel.me>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "latest",
+    "jquery": "latest",
+    "backbone-amd": "latest",
+    "underscore-amd": "latest"
+  }
+}
