@@ -1,3 +1,3 @@
 # Orchestra
 
-> Orchestra is a developer communication and information tool loosely based on Github's internal Team tool.
+> Orchestra is a developer communication and information tool loosely based on Github's internal Team.
