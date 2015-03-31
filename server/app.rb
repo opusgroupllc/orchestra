@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'json'
 
-get '/' do
-  { hello: 'world' }.to_json
-end
+require_relative 'api/users'
+
+register Orchestra::Routes::Users
