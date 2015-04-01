@@ -1,6 +1,7 @@
 define(function(require) {
 
-  var View = require('views/base/view');
+  var Chaplin = require('chaplin'),
+      View = require('views/base/view');
 
   var LoginView = View.extend({
     autoRender: true,
@@ -74,12 +75,16 @@ define(function(require) {
     },
 
     authError: function(err) {
+      var error = (err && err.responseJSON) ? err.responseJSON.error : err.statusText;
       this.$('form button').prop('disabled', false);
-      this.showError(err.responseJSON.error);
+      this.showError(error);
     },
 
-    authSuccess: function() {
-      console.log('success!');
+    authSuccess: function(res) {
+      window.localStorage.setItem('token', res.token);
+
+      // Chaplin.utils.redirectTo({ url: '/' });
+      window.location = '/';
     }
   });
 
