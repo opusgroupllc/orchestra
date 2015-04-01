@@ -8577,11 +8577,15 @@ html, body {
   height: 100%;
 }
 /* line 4, ../../sass/_login.scss */
+.login #status {
+  visibility: hidden;
+}
+/* line 8, ../../sass/_login.scss */
 .login .container {
   height: 100%;
   display: table;
 }
-/* line 9, ../../sass/_login.scss */
+/* line 13, ../../sass/_login.scss */
 .login .row {
   height: 100%;
   display: table-cell;

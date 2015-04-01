@@ -31,8 +31,13 @@ define(function(require) {
       this.password = this.$('#password');
 
       this.delegate('submit', 'form', function(e) {
-        self.submitLogin();
-        e.preventDefault();
+        self.$('form button').prop('disabled', true);
+
+        if (!self.submitLogin()) {
+          self.$('form button').prop('disabled', false);
+        }
+
+        e.preventDefault()
       });
     },
 
@@ -49,7 +54,12 @@ define(function(require) {
       }
 
       this.tryLogin();
-      return false;
+      return true;
+    },
+
+    showError: function(message) {
+      this.$('#status').css('visibility', 'visible');
+      this.$('#status .message').text(message);
     },
 
     tryLogin: function() {
@@ -59,12 +69,13 @@ define(function(require) {
         data: { password: this.password.val().trim() },
         dataType: 'json'
       });
-      req.error(this.authError);
-      req.success(this.authSuccess);
+      req.error(this.authError.bind(this));
+      req.success(this.authSuccess.bind(this));
     },
 
     authError: function(err) {
-      console.log('error');
+      this.$('form button').prop('disabled', false);
+      this.showError(err.statusText);
     },
 
     authSuccess: function() {

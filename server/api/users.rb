@@ -8,6 +8,7 @@ module Orchestra
 
         app.post '/api/v1/users/:id/sessions' do
           puts "#{params[:id]} #{params[:password]}"
+          { hello: 'world' }.to_json
         end
       end
     end

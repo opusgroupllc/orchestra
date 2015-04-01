@@ -1,6 +1,10 @@
 .login {
   height: 100%;
 
+  #status {
+    visibility: hidden;
+  }
+
   .container {
     height: 100%;
     display: table;
