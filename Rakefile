@@ -26,11 +26,13 @@ task :copy do
   end
 end
 
-multitask :serve => ['server:serve', 'client:serve']
+multitask :serve => ['client:serve', 'server:serve']
 
 namespace :server do
   task :serve do
-    sh "ruby server/app.rb"
+    Dir.chdir 'server' do
+      sh "padrino start -p 4567"
+    end
   end
 end
 
