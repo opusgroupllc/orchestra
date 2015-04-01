@@ -29,7 +29,13 @@ Orchestra::App.controllers :user do
   end
 
   post :session, :map => '/api/v1/users/:username/sessions' do
-    puts "#{params}"
+    user = User.find_by_email(params[:username])
+
+    if user and user.password == params[:password]
+      user.to_json
+     else
+      error 400, { :error => "Invalid credentials." }.to_json
+    end
   end
 
 end

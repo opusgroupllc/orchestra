@@ -75,7 +75,7 @@ define(function(require) {
 
     authError: function(err) {
       this.$('form button').prop('disabled', false);
-      this.showError(err.statusText);
+      this.showError(err.responseJSON.error);
     },
 
     authSuccess: function() {
