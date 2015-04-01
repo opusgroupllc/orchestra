@@ -45,12 +45,12 @@ define(function(require) {
     submitLogin: function() {
       if (this.username.val().trim().length <= 0) {
         this.username.addClass('error');
-        this.showError('Please enter a username or email');
+        this.showError('Please enter a username or email.');
         return false;
       }
       if (this.password.val().trim().length <= 0) {
         this.password.addClass('error');
-        this.showError('Please enter your password');
+        this.showError('Please enter your password.');
         return false;
       }
 
@@ -83,7 +83,6 @@ define(function(require) {
     authSuccess: function(res) {
       window.localStorage.setItem('token', res.token);
 
-      // Chaplin.utils.redirectTo({ url: '/' });
       window.location = '/';
     }
   });
