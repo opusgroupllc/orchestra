@@ -5,6 +5,7 @@ define(function(require) {
   var LoginView = View.extend({
     autoRender: true,
     template: require('text!views/templates/login_view.hbs'),
+    className: 'login',
 
     // properties
     username: null,
