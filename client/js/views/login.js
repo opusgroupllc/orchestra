@@ -37,7 +37,36 @@ define(function(require) {
     },
 
     submitLogin: function() {
-      console.log(this.username.val(), this.password.val());
+      if (this.username.val().trim().length <= 0) {
+        this.username.addClass('error');
+        this.showError('Please enter a username or email');
+        return false;
+      }
+      if (this.password.val().trim().length <= 0) {
+        this.password.addClass('error');
+        this.showError('Please enter your password');
+        return false;
+      }
+
+      this.tryLogin();
+      return false;
+    },
+
+    tryLogin: function() {
+      var req = $.ajax({
+        type: 'POST',
+        url: 'http://localhost:4567/api/v1/users/' + this.username.val().trim() + '/sessions',
+        data: { password: this.password.val().trim() },
+        dataType: 'json'
+      });
+      req.error(function(error) {
+        console.log('error', error);
+      })
+      req.success(function() {
+        console.log('success');
+      });
+      // req.error(this.authError);
+      // req.success(this.authSuccess);
     }
   });
 
