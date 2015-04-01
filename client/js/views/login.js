@@ -59,14 +59,16 @@ define(function(require) {
         data: { password: this.password.val().trim() },
         dataType: 'json'
       });
-      req.error(function(error) {
-        console.log('error', error);
-      })
-      req.success(function() {
-        console.log('success');
-      });
-      // req.error(this.authError);
-      // req.success(this.authSuccess);
+      req.error(this.authError);
+      req.success(this.authSuccess);
+    },
+
+    authError: function(err) {
+      console.log('error');
+    },
+
+    authSuccess: function() {
+      console.log('success!');
     }
   });
 
