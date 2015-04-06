@@ -8674,3 +8674,7 @@ html, body {
 .people .person .inactive {
   color: #767676;
 }
+/* line 43, ../../sass/_people.scss */
+.people .person i {
+  font-size: 16px;
+}
