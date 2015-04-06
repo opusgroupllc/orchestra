@@ -3,9 +3,36 @@
     margin-bottom: 0;
     background-color: #fff;
     border-bottom: 0;
-    
+
     .navbar-brand, a {
       color: #021139;
     }
+  }
+}
+
+.orchestra-side-nav {
+  li.active > a {
+    color: #021139;
+    border-left: 2px solid #021139;
+    font-weight: bold;
+  }
+
+  li > a {
+    padding: 4px 20px;
+    font-size: 13px;
+    color: #767676;
+  }
+
+  li > a:hover {
+    background: none;
+  }
+
+  li:not(.active) > a {
+    border-left: 1px solid #fff;
+  }
+
+  li:not(.active) > a:hover {
+    color: #021139;
+    border-left: 1px solid #021139;
   }
 }
