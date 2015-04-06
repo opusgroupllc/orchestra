@@ -14,40 +14,25 @@
         <h3>People <span class="pull-right"><small><a href="#"><i class="fa fa-fw fa-plus"></i></a></small></span></h3>
 
         <table class="table">
-          <tr class="person">
-            <td class="avatar">
-              <img src="http://placehold.it/38x38" />
-            </td>
-            <td>
-              <span class="name">Joshua Farrar</span>
-              <span class="title">JavaScript Wizard</span>
-            </td>
-            <td class="text-center">
-              <span class="location">Pentagon City, VA</span>
-            </td>
-            <td class="text-right">
-              <i class="fa fa-fw fa-github"></i>
-              <i class="fa fa-fw fa-twitter"></i>
-              <i class="fa fa-fw fa-envelope-o"></i>
-            </td>
-          </tr>
-          <tr class="person">
-            <td>
-              <img src="http://placehold.it/38x38" />
-            </td>
-            <td>
-              <span class="name">Joshua Farrar</span>
-              <span class="title">Nerd Wrangler</span>
-            </td>
-            <td class="text-center">
-              <span class="location">Pentagon City, VA</span>
-            </td>
-            <td class="text-right">
-              <i class="fa fa-fw fa-github"></i>
-              <i class="fa fa-fw fa-twitter"></i>
-              <i class="fa fa-fw fa-envelope-o"></i>
-            </td>
-          </tr>
+          <% _.each(people, function(person) { %>
+            <tr class="person">
+              <td class="avatar">
+                <img src="http://placehold.it/38x38" />
+              </td>
+              <td>
+                <span class="name"><%= person.full_name %></span>
+                <span class="title"><%= person.title %></span>
+              </td>
+              <td class="text-center">
+                <span class="location"><%= person.location %></span>
+              </td>
+              <td class="text-right">
+                <i class="fa fa-fw fa-github"></i>
+                <i class="fa fa-fw fa-twitter"></i>
+                <i class="fa fa-fw fa-envelope-o"></i>
+              </td>
+            </tr>
+          <% }); %>
         </table>
       </div>
     </div>
