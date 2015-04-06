@@ -1,7 +1,8 @@
-Orchestra::App.controllers :user do
+require_relative '../serializers/user_serializer.rb'
 
+Orchestra::App.controllers :user do
   get :index, :map => '/api/v1/users' do
-    { hello: 'world' }.to_json
+    ActiveModel::ArraySerializer.new(User.all, each_serializer: UserSerializer).to_json
   end
 
   post :session, :map => '/api/v1/users/:username/sessions' do
