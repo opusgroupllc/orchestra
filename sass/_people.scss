@@ -1,16 +1,25 @@
 .people {
   h3 {
     margin-top: 0;
+    color: #021139;
+
+    span > small > a {
+      color: #021139;
+    }
   }
 
   table {
-    border-top: 2px solid #767676;
+    border-top: 2px solid #021139;
   }
 
   .person {
     td {
       display: table-cell;
       vertical-align: middle; 
+    }
+
+    .avatar {
+      width: 38px;
     }
 
     .name {
