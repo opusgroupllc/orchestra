@@ -1,0 +1,30 @@
+.people {
+  h3 {
+    margin-top: 0;
+  }
+
+  table {
+    border-top: 2px solid #767676;
+  }
+
+  .person {
+    td {
+      display: table-cell;
+      vertical-align: middle; 
+    }
+
+    .name {
+      display: block;
+      font-weight: bold;
+    }
+
+    .title {
+      display: block;
+      color: #767676;
+    }
+
+    .location {
+      color: #767676;
+    }
+  }
+}

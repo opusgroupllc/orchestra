@@ -4,5 +4,10 @@ html, body {
   height: 100%;
 }
 
+.container {
+  max-width: 960px;
+}
+
 @import "login";
 @import "nav";
+@import "people";

@@ -8572,6 +8572,11 @@ html, body {
   height: 100%;
 }
 
+/* line 7, ../../sass/app.scss */
+.container {
+  max-width: 960px;
+}
+
 /* line 1, ../../sass/_login.scss */
 .login {
   height: 100%;
@@ -8594,38 +8599,65 @@ html, body {
 
 /* line 2, ../../sass/_nav.scss */
 .orchestra-nav .navbar {
-  margin-bottom: 0;
   background-color: #fff;
   border-bottom: 0;
 }
-/* line 7, ../../sass/_nav.scss */
+/* line 6, ../../sass/_nav.scss */
 .orchestra-nav .navbar .navbar-brand, .orchestra-nav .navbar a {
   color: #021139;
 }
 
-/* line 14, ../../sass/_nav.scss */
+/* line 13, ../../sass/_nav.scss */
 .orchestra-side-nav li.active > a {
   color: #021139;
   border-left: 2px solid #021139;
 }
-/* line 19, ../../sass/_nav.scss */
+/* line 18, ../../sass/_nav.scss */
 .orchestra-side-nav li > a {
   font-weight: bold;
   padding: 4px 20px;
   font-size: 13px;
   color: #767676;
 }
-/* line 26, ../../sass/_nav.scss */
+/* line 25, ../../sass/_nav.scss */
 .orchestra-side-nav li > a:hover {
   background: none;
 }
-/* line 30, ../../sass/_nav.scss */
+/* line 29, ../../sass/_nav.scss */
 .orchestra-side-nav li:not(.active) > a {
   border-left: 2px solid #fff;
 }
-/* line 34, ../../sass/_nav.scss */
+/* line 33, ../../sass/_nav.scss */
 .orchestra-side-nav li:not(.active) > a:hover {
   color: #021139;
   padding-left: 21px;
   border-left: 1px solid #021139;
+}
+
+/* line 2, ../../sass/_people.scss */
+.people h3 {
+  margin-top: 0;
+}
+/* line 6, ../../sass/_people.scss */
+.people table {
+  border-top: 2px solid #767676;
+}
+/* line 11, ../../sass/_people.scss */
+.people .person td {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 16, ../../sass/_people.scss */
+.people .person .name {
+  display: block;
+  font-weight: bold;
+}
+/* line 21, ../../sass/_people.scss */
+.people .person .title {
+  display: block;
+  color: #767676;
+}
+/* line 26, ../../sass/_people.scss */
+.people .person .location {
+  color: #767676;
 }
