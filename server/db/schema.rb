@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 3) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.string   "location"
     t.string   "github"
     t.string   "twitter"
+    t.string   "gravatar"
   end
 
 end

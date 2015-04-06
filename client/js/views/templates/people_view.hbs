@@ -17,7 +17,11 @@
           <% _.each(people, function(person) { %>
             <tr class="person">
               <td class="avatar">
-                <img src="http://placehold.it/38x38" />
+                <% if (person.gravatar) { %>
+                  <img src="http://www.gravatar.com/avatar/<%= person.gravatar %>?s=38" height="38" width="38" />
+                <% } else { %>
+                  <img src="http://www.gravatar.com/avatar/?s=38&default=identicon" height="38" width="38" />
+                <% } %>
               </td>
               <td>
                 <span class="name"><%= person.full_name %></span>
@@ -27,9 +31,24 @@
                 <span class="location"><%= person.location %></span>
               </td>
               <td class="text-right">
-                <i class="fa fa-fw fa-github"></i>
-                <i class="fa fa-fw fa-twitter"></i>
-                <i class="fa fa-fw fa-envelope-o"></i>
+
+                <% if (person.github) { %>
+                  <a href="https://github.com/<%= person.github %>"><i class="fa fa-fw fa-github" class="invactive"></i></a>
+                <% } else { %>
+                  <i class="fa fa-fw fa-github" class="inactive"></i>
+                <% } %>
+
+                <% if (person.twitter) { %>
+                  <a href="https://twitter.com/<%= person.twitter %>"><i class="fa fa-fw fa-twitter"></i></a>
+                <% } else { %>
+                  <i class="fa fa-fw fa-twitter" class="inactive"></i>
+                <% } %>
+
+                <% if (person.email) { %>
+                  <a href="mailto:<%= person.email %>"><i class="fa fa-fw fa-envelope-o"></i></a>
+                <% } else { %>
+                  <i class="fa fa-fw fa-envelope-o" class="inactive"></i>
+                <% } %>
               </td>
             </tr>
           <% }); %>
