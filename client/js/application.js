@@ -1,29 +1,24 @@
 define(function(require) {
   'use strict';
 
-  var Chaplin = require('chaplin');
+  var Chaplin = require('chaplin'),
+      mediator = require('mediator');
 
   var Application = Chaplin.Application.extend({
 
     initMediator: function() {
-      Chaplin.mediator.user = window.localStorage.getItem('token');
-      Chaplin.mediator.seal();
+      mediator.user = window.localStorage.getItem('token');
+      mediator.seal();
     },
 
     start: function() {
       this.initMediator();
 
-      console.log(Chaplin.mediator.user);
-
-      if (!this.isLoggedIn()) {
+      if (!mediator.loggedIn()) {
         Chaplin.utils.redirectTo({ url: 'login' });
       }
 
       Chaplin.Application.prototype.start.apply(this);
-    },
-
-    isLoggedIn: function() {
-      return (!!Chaplin.mediator.user);
     }
   });
 
