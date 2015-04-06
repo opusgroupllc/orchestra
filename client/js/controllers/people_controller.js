@@ -2,23 +2,23 @@ define(function(require) {
   'use strict';
 
   var Chaplin = require('chaplin'),
-      DashboardView = require('views/dashboard'),
       NavbarView = require('views/navbar'),
+      PeopleView = require('views/people'),
       mediator = require('mediator');
 
-  var DashboardController = Chaplin.Controller.extend({
-    dashboardView: null,
+  var PeopleController = Chaplin.Controller.extend({
     navbarView: null,
+    peopleView: null,
 
     index: function() {
       if (!mediator.loggedIn()) {
         Chaplin.utils.redirectTo({ url: 'login' });
         return false;
       }
-      this.dashboardView = new DashboardView();
+      this.peopleView = new PeopleView();
       this.navbarView = new NavbarView();
     }
   });
 
-  return DashboardController;
+  return PeopleController;
 });

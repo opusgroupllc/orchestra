@@ -8607,10 +8607,10 @@ html, body {
 .orchestra-side-nav li.active > a {
   color: #021139;
   border-left: 2px solid #021139;
-  font-weight: bold;
 }
-/* line 20, ../../sass/_nav.scss */
+/* line 19, ../../sass/_nav.scss */
 .orchestra-side-nav li > a {
+  font-weight: bold;
   padding: 4px 20px;
   font-size: 13px;
   color: #767676;
@@ -8621,10 +8621,11 @@ html, body {
 }
 /* line 30, ../../sass/_nav.scss */
 .orchestra-side-nav li:not(.active) > a {
-  border-left: 1px solid #fff;
+  border-left: 2px solid #fff;
 }
 /* line 34, ../../sass/_nav.scss */
 .orchestra-side-nav li:not(.active) > a:hover {
   color: #021139;
+  padding-left: 21px;
   border-left: 1px solid #021139;
 }

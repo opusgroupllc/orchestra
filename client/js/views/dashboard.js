@@ -1,43 +1,33 @@
 define(function(require) {
 
-  var Chaplin = require('chaplin'),
-      View = require('views/base/view');
+var Chaplin = require('chaplin'),
+    NavbarView = require('views/navbar'),
+    View = require('views/base/view');
 
-  var DashboardView = View.extend({
-    autoRender: true,
-    template: require('text!views/templates/dashboard_view.hbs'),
-    className: 'dashboard'
+var DashboardView = View.extend({
+  autoRender: true,
+  template: require('text!views/templates/dashboard_view.hbs'),
+  className: 'dashboard'
 
-    // initialize: function() {
-    //   this.on('rendered', this.afterRender);
-    // },
+  // navbarView: null,
 
-    // render: function() {
-    //   this.$el.html(this.template);
+  // initialize: function() {
+  //   this.on('rendered', this.afterRender);
+  // },
 
-    //   // trigger afterRender to bind jQuery functionality
-    //   this.trigger('rendered');
+  // render: function() {
+  //   this.$el.html(this.template);
 
-    //   return this;
-    // },
+  //   // trigger afterRender to bind jQuery functionality
+  //   this.trigger('rendered');
 
-    // afterRender: function() {
-    //   var self = this;
+  //   return this;
+  // },
 
-    //   this.username = this.$('#username');
-    //   this.password = this.$('#password');
+  // afterRender: function() {
+  //   this.navbarView = new NavbarView();
+  // }
+});
 
-    //   this.delegate('submit', 'form', function(e) {
-    //     self.$('form button').prop('disabled', true);
-
-    //     if (!self.submitLogin()) {
-    //       self.$('form button').prop('disabled', false);
-    //     }
-
-    //     e.preventDefault()
-    //   });
-    // }
-  });
-
-  return DashboardView;
+return DashboardView;
 });

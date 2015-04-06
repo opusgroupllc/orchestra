@@ -5,5 +5,6 @@ define(function() {
     match('login', 'session#new');
     match('logout', 'session#logout');
     match('', 'dashboard#index');
+    match('people', 'people#index');
   }
 });
