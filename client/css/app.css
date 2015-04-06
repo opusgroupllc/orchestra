@@ -8591,3 +8591,14 @@ html, body {
   display: table-cell;
   vertical-align: middle;
 }
+
+/* line 2, ../../sass/_nav.scss */
+.orchestra-nav .navbar {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 0;
+}
+/* line 7, ../../sass/_nav.scss */
+.orchestra-nav .navbar .navbar-brand, .orchestra-nav .navbar a {
+  color: #021139;
+}

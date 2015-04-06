@@ -13,6 +13,7 @@ end
 task :copy do
   [ "./bower_components/jquery/dist/jquery.min.js",
     "./bower_components/jquery/dist/jquery.min.map",
+    "./bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js",
     "./bower_components/requirejs/require.js",
     "./bower_components/requirejs-text/text.js",
     "./bower_components/backbone-amd/backbone-min.js",

@@ -13,6 +13,8 @@ define(function(require) {
     start: function() {
       this.initMediator();
 
+      console.log(Chaplin.mediator.user);
+
       if (!this.isLoggedIn()) {
         Chaplin.utils.redirectTo({ url: 'login' });
       }

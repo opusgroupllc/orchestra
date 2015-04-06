@@ -8,8 +8,7 @@ Orchestra::App.controllers :user do
     user = User.find_by_email(params[:username])
 
     if user and user.password == params[:password]
-      sign_in(user)
-      { token: sign_jwt(session[:current_user]) }.to_json
+      { token: sign_jwt(user.id) }.to_json
      else
       error 400, { :error => "Invalid credentials." }.to_json
     end

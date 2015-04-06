@@ -1,18 +1,20 @@
 define(function(require) {
   'use strict';
 
-  var Chaplin = require('chaplin');
+  var Chaplin = require('chaplin'),
+      DashboardView = require('views/dashboard'),
+      NavbarView = require('views/navbar');
 
   var DashboardController = Chaplin.Controller.extend({
-    // loginView: null,
+    dashboardView: null,
+
     index: function() {
       if (!!!Chaplin.mediator.user) {
-        console.log("nope.", Chaplin.mediator);
         return false;
       }
-      console.log("o hai.");
-      window.localStorage.removeItem('token');
-      // this.loginView = new LoginView();
+      this.dashboardView = new DashboardView();
+
+      this.subView('navbar', new NavbarView());
     }
   });
 

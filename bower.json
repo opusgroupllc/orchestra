@@ -21,6 +21,7 @@
     "require-handlebars-plugin": "latest",
     "backbone-amd": "latest",
     "underscore-amd": "latest",
-    "requirejs-text": "~2.0.14"
+    "requirejs-text": "~2.0.14",
+    "bootstrap-sass": "~3.3.4"
   }
 }
