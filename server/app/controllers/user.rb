@@ -5,6 +5,14 @@ Orchestra::App.controllers :user do
     ActiveModel::ArraySerializer.new(User.all, each_serializer: UserSerializer).to_json
   end
 
+  options :me, :map => '/api/v1/users/me' do
+    { hello: 'world' }.to_json
+  end
+
+  get :me, :map => '/api/v1/users/me' do
+    UserSerializer.new(User.find(1), root: false).to_json
+  end
+
   get :show, :map => '/api/v1/users/:id' do
     UserSerializer.new(User.find(params[:id]), root: false).to_json
   end
