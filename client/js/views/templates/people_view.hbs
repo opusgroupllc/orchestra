@@ -24,7 +24,7 @@
                 <% } %>
               </td>
               <td>
-                <span class="name"><%= person.full_name %></span>
+                <span class="name"><a href="/profile/<%= person.username %>"><%= person.full_name %></a></span>
                 <span class="title"><%= person.title %></span>
               </td>
               <td class="text-center">
@@ -35,19 +35,19 @@
                 <% if (person.github) { %>
                   <a href="https://github.com/<%= person.github %>"><i class="fa fa-fw fa-github" class="invactive"></i></a>
                 <% } else { %>
-                  <i class="fa fa-fw fa-github" class="inactive"></i>
+                  <i class="inactive fa fa-fw fa-github"></i>
                 <% } %>
 
                 <% if (person.twitter) { %>
                   <a href="https://twitter.com/<%= person.twitter %>"><i class="fa fa-fw fa-twitter"></i></a>
                 <% } else { %>
-                  <i class="fa fa-fw fa-twitter" class="inactive"></i>
+                  <i class="inactive fa fa-fw fa-twitter"></i>
                 <% } %>
 
                 <% if (person.email) { %>
                   <a href="mailto:<%= person.email %>"><i class="fa fa-fw fa-envelope-o"></i></a>
                 <% } else { %>
-                  <i class="fa fa-fw fa-envelope-o" class="inactive"></i>
+                  <i class="inactive fa fa-fw fa-envelope-o"></i>
                 <% } %>
               </td>
             </tr>

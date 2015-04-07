@@ -8704,37 +8704,41 @@ html, body {
   border-top: 2px solid #021139;
 }
 /* line 16, ../../sass/_people.scss */
+.people .person a {
+  color: #021139;
+}
+/* line 20, ../../sass/_people.scss */
 .people .person td {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 21, ../../sass/_people.scss */
+/* line 25, ../../sass/_people.scss */
 .people .person .avatar {
   width: 38px;
 }
-/* line 24, ../../sass/_people.scss */
+/* line 28, ../../sass/_people.scss */
 .people .person .avatar img {
   border-radius: 2px;
 }
-/* line 29, ../../sass/_people.scss */
+/* line 33, ../../sass/_people.scss */
 .people .person .name {
   display: block;
   font-weight: bold;
 }
-/* line 34, ../../sass/_people.scss */
+/* line 38, ../../sass/_people.scss */
 .people .person .title {
   display: block;
-  color: #767676;
-}
-/* line 39, ../../sass/_people.scss */
-.people .person .location {
-  color: #767676;
+  color: #9696a6;
 }
 /* line 43, ../../sass/_people.scss */
-.people .person .inactive {
-  color: #767676;
+.people .person .location {
+  color: #9696a6;
 }
 /* line 47, ../../sass/_people.scss */
+.people .person .inactive {
+  color: #9696a6;
+}
+/* line 51, ../../sass/_people.scss */
 .people .person i {
   font-size: 16px;
 }

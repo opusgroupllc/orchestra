@@ -13,6 +13,10 @@
   }
 
   .person {
+    a {
+      color: #021139;
+    }
+
     td {
       display: table-cell;
       vertical-align: middle; 
@@ -33,15 +37,15 @@
 
     .title {
       display: block;
-      color: #767676;
+      color: #9696a6;
     }
 
     .location {
-      color: #767676;
+      color: #9696a6;
     }
 
     .inactive {
-      color: #767676;
+      color: #9696a6;
     }
 
     i {
