@@ -8640,23 +8640,23 @@ html, body {
   border-left: 1px solid #2b499c;
 }
 
-/* line 2, ../../sass/dashboard.scss */
+/* line 2, ../../sass/_dashboard.scss */
 .dashboard .nav-tabs {
   margin-bottom: 20px;
 }
-/* line 6, ../../sass/dashboard.scss */
+/* line 6, ../../sass/_dashboard.scss */
 .dashboard .new-status-tabs {
   margin-bottom: 30px;
 }
-/* line 10, ../../sass/dashboard.scss */
+/* line 10, ../../sass/_dashboard.scss */
 .dashboard .new-status {
   margin-bottom: 10px;
 }
-/* line 13, ../../sass/dashboard.scss */
+/* line 13, ../../sass/_dashboard.scss */
 .dashboard .new-status textarea:focus {
   outline: 0px none transparent;
 }
-/* line 15, ../../sass/dashboard.scss */
+/* line 15, ../../sass/_dashboard.scss */
 .dashboard .new-status textarea {
   border: 1px solid #ddd;
   width: 100%;
@@ -8664,32 +8664,32 @@ html, body {
   height: 63px;
   padding: 12px 13px 0 13px;
 }
-/* line 23, ../../sass/dashboard.scss */
+/* line 23, ../../sass/_dashboard.scss */
 .dashboard .new-status .buddy {
   color: #767676;
   font-size: 12px;
 }
-/* line 29, ../../sass/dashboard.scss */
+/* line 29, ../../sass/_dashboard.scss */
 .dashboard .status {
   display: inline-block;
   margin-bottom: 20px;
   width: 100%;
 }
-/* line 33, ../../sass/dashboard.scss */
+/* line 34, ../../sass/_dashboard.scss */
 .dashboard .status .avatar {
   float: left;
   width: 60px;
 }
-/* line 37, ../../sass/dashboard.scss */
+/* line 38, ../../sass/_dashboard.scss */
 .dashboard .status .avatar img {
   border-radius: 2px;
 }
-/* line 42, ../../sass/dashboard.scss */
+/* line 43, ../../sass/_dashboard.scss */
 .dashboard .status .content {
   overflow: hidden;
   padding-left: 10px;
 }
-/* line 46, ../../sass/dashboard.scss */
+/* line 47, ../../sass/_dashboard.scss */
 .dashboard .status .content .author {
   font-weight: bold;
   display: block;
