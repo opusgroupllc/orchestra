@@ -10,7 +10,7 @@ var Chaplin = require('chaplin'),
     className: 'dashboard',
 
     initialize: function() {
-      this.$el.on('submit', 'form', this.post.bind(this));
+      this.$el.on('submit', '#new-status', this.post.bind(this));
     },
 
     render: function() {

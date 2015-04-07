@@ -3,23 +3,47 @@
   margin-bottom: 20px;
 }
 /* line 6, ../../sass/dashboard.scss */
-.dashboard .status {
+.dashboard .new-status-tabs {
+  margin-bottom: 30px;
+}
+/* line 10, ../../sass/dashboard.scss */
+.dashboard .new-status {
   margin-bottom: 10px;
 }
-/* line 9, ../../sass/dashboard.scss */
-.dashboard .status textarea:focus {
+/* line 13, ../../sass/dashboard.scss */
+.dashboard .new-status textarea:focus {
   outline: 0px none transparent;
 }
-/* line 11, ../../sass/dashboard.scss */
-.dashboard .status textarea {
+/* line 15, ../../sass/dashboard.scss */
+.dashboard .new-status textarea {
   border: 1px solid #ddd;
   width: 100%;
   -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
   height: 63px;
   padding: 12px 13px 0 13px;
 }
-/* line 19, ../../sass/dashboard.scss */
-.dashboard .status .buddy {
+/* line 23, ../../sass/dashboard.scss */
+.dashboard .new-status .buddy {
   color: #767676;
   font-size: 12px;
+}
+/* line 30, ../../sass/dashboard.scss */
+.dashboard .status .avatar {
+  float: left;
+  width: 60px;
+}
+/* line 34, ../../sass/dashboard.scss */
+.dashboard .status .avatar img {
+  border-radius: 2px;
+}
+/* line 39, ../../sass/dashboard.scss */
+.dashboard .status .content {
+  overflow: hidden;
+  padding-left: 10px;
+}
+/* line 43, ../../sass/dashboard.scss */
+.dashboard .status .content .author {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
 }

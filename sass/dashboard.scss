@@ -3,7 +3,11 @@
     margin-bottom: 20px;
   }
 
-  .status {
+  .new-status-tabs {
+    margin-bottom: 30px;
+  }
+
+  .new-status {
     margin-bottom: 10px;
 
     textarea:focus {outline:0px none transparent;}
@@ -19,6 +23,28 @@
     .buddy {
       color: #767676;
       font-size: 12px;
+    }
+  }
+
+  .status {
+    .avatar {
+      float: left;
+      width: 60px;
+
+      img {
+        border-radius: 2px;
+      }
+    }
+
+    .content {
+      overflow: hidden;
+      padding-left: 10px;
+
+      .author {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+      }
     }
   }
 }
