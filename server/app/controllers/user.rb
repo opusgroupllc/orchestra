@@ -9,6 +9,10 @@ Orchestra::App.controllers :user do
     UserSerializer.new(User.find(params[:id]), root: false).to_json
   end
 
+  get :show, :map => '/api/v1/users/:id/statuses' do
+    render plain: 'OK'
+  end
+
   post :session, :map => '/api/v1/users/:username/sessions' do
     user = User.find_by_email(params[:username])
 
