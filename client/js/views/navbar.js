@@ -1,13 +1,20 @@
 define(function(require) {
 
   var Chaplin = require('chaplin'),
+      mediator = require('mediator'),
       View = require('views/base/view');
 
   var NavbarView = View.extend({
+    el: $('body'),
     container: '#navbar',
     autoRender: true,
     template: require('text!views/templates/navbar_view.hbs'),
-    className: 'orchestra-nav'
+    className: 'orchestra-nav',
+
+    render: function() {
+      this.$el.html(_.template(this.template));
+      return this;
+    }
   });
 
   return NavbarView;

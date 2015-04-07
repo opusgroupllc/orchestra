@@ -6,14 +6,16 @@ define(function(require) {
       View = require('views/base/view');
 
   var PeopleView = View.extend({
-    autoRender: true,
     template: require('text!views/templates/people_view.hbs'),
     className: 'people',
 
     navbarView: false,
+    people: false,
 
     initialize: function() {
       var self = this;
+
+      this.on('rendered', this.afterRender, this);
 
       this.people = new People();
 
@@ -26,8 +28,14 @@ define(function(require) {
 
     render: function() {
       this.$el.html(_.template(this.template, { people: this.people.toJSON() }));
-      this.navbarView = new NavbarView();
+
+      this.trigger('rendered');
+
       return this;
+    },
+
+    afterRender: function() {
+      this.navbarView = new NavbarView();
     }
   });
 

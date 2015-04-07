@@ -3,12 +3,10 @@ define(function(require) {
 
   var Chaplin = require('chaplin'),
       DashboardView = require('views/dashboard'),
-      NavbarView = require('views/navbar'),
       mediator = require('mediator');
 
   var DashboardController = Chaplin.Controller.extend({
     dashboardView: null,
-    navbarView: null,
 
     index: function() {
       if (!mediator.loggedIn()) {
@@ -16,7 +14,6 @@ define(function(require) {
         return false;
       }
       this.dashboardView = new DashboardView();
-      this.navbarView = new NavbarView();
     }
   });
 
