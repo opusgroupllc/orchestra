@@ -5,6 +5,7 @@ define(function(require) {
       View = require('views/base/view');
 
   var LoginView = View.extend({
+    autoRender: true,
     template: require('text!views/templates/login_view.hbs'),
     className: 'login',
 
@@ -15,8 +16,6 @@ define(function(require) {
     initialize: function() {
       if (mediator.loggedIn()) {
         Chaplin.utils.redirectTo({ url: '/' });
-      } else {
-        this.render();
       }
 
       this.on('rendered', this.afterRender, this);
@@ -44,7 +43,7 @@ define(function(require) {
           self.$('form button').prop('disabled', false);
         }
 
-        e.preventDefault()
+        e.preventDefault();
       });
     },
 
