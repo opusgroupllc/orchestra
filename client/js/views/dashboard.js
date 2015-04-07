@@ -25,6 +25,7 @@ var Chaplin = require('chaplin'),
     },
 
     render: function() {
+
       this.$el.html(_.template(this.template, { statuses: this.statuses.toJSON() }));
       
       this.navbarView = new NavbarView();
@@ -41,28 +42,33 @@ var Chaplin = require('chaplin'),
     afterRender: function() {
       var self = this;
 
-      this.delegate('submit', '#new-status', function(event) {
-        event.preventDefault();
+      this.delegate('submit', '#new-status', this.post);
+      this.delegate('keydown', '#new-status [name="status"]', this.keyDown);
+    },
 
-        var message = $("#new-status [name='status']").val();
+    post: function(e) {
+      e.preventDefault();
 
-        if (message.length === 0) return false;
+      var self = this;
 
-        var status = new Status();
-        status.save({ message: message }, {
-          success: function(status) {
-            self.statuses.add(status.toJSON(), { at: 0 });
-            self.refresh();
-            $("#new-status [name='status']").focus();
-          }
-        });
-      });
+      var message = $("#new-status [name='status']").val();
 
-      $(window).keydown(function(event) {
-        if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
-          $("#new-status").submit();
+      if (message.length === 0) return false;
+
+      var status = new Status();
+      status.save({ message: message }, {
+        success: function(status) {
+          self.statuses.add(status.toJSON(), { at: 0 });
+          self.refresh();
+          $("#new-status [name='status']").focus();
         }
       });
+    },
+
+    keyDown: function(e) {
+      if ((e.metaKey || e.ctrlKey) && e.keyCode == 13) {
+        $("#new-status").submit();
+      }
     }
   });
 
