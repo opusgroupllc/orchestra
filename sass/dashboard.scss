@@ -27,6 +27,10 @@
   }
 
   .status {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+    
     .avatar {
       float: left;
       width: 60px;

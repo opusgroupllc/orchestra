@@ -2,19 +2,30 @@ define(function(require) {
 
 var Chaplin = require('chaplin'),
     NavbarView = require('views/navbar'),
+    Status = require('models/status'),
+    Statuses = require('models/statuses'),
     View = require('views/base/view');
 
   var DashboardView = View.extend({
-    autoRender: true,
     template: require('text!views/templates/dashboard_view.hbs'),
     className: 'dashboard',
 
     initialize: function() {
-      this.$el.on('submit', '#new-status', this.post.bind(this));
+      var self = this;
+
+      this.$el.on('submit', '#new-status', this.post);
+
+      this.statuses = new Statuses();
+
+      this.statuses.fetch({
+        success: function() {
+          self.render();
+        }
+      });
     },
 
     render: function() {
-      this.$el.html(this.template);
+      this.$el.html(_.template(this.template, { statuses: this.statuses.toJSON() }));
       
       this.navbarView = new NavbarView();
       
@@ -22,10 +33,15 @@ var Chaplin = require('chaplin'),
     },
 
     post: function(event) {
-      console.log('hai');
-
       // prevent the form from submitting
       event.preventDefault();
+
+      var message = $(this.status).val();
+
+      var status = new Status({ message: message });
+      status.save(status.toJSON);
+
+      console.log(status.get('message'));
     }
   });
 

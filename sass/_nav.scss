@@ -4,7 +4,7 @@
     border-bottom: 0;
 
     .navbar-brand, a {
-      color: #021139;
+      color: $brand-primary;
     }
   }
 }
@@ -16,8 +16,8 @@
 
 .orchestra-side-nav {
   li.active > a {
-    color: #021139;
-    border-left: 2px solid #021139;
+    color: $brand-primary;
+    border-left: 2px solid $brand-primary;
   }
 
   li > a {
@@ -36,8 +36,8 @@
   }
 
   li:not(.active) > a:hover {
-    color: #021139;
+    color: $brand-primary;
     padding-left: 21px;
-    border-left: 1px solid #021139;
+    border-left: 1px solid $brand-primary;
   }
 }

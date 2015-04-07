@@ -9,7 +9,7 @@ Orchestra::App.controllers :user do
     UserSerializer.new(User.find(params[:id]), root: false).to_json
   end
 
-  get :show, :map => '/api/v1/users/:id/statuses' do
+  get :statuses, :map => '/api/v1/users/:id/statuses' do
     render plain: 'OK'
   end
 

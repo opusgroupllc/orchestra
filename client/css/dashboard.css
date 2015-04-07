@@ -27,21 +27,27 @@
   color: #767676;
   font-size: 12px;
 }
-/* line 30, ../../sass/dashboard.scss */
+/* line 29, ../../sass/dashboard.scss */
+.dashboard .status {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 100%;
+}
+/* line 34, ../../sass/dashboard.scss */
 .dashboard .status .avatar {
   float: left;
   width: 60px;
 }
-/* line 34, ../../sass/dashboard.scss */
+/* line 38, ../../sass/dashboard.scss */
 .dashboard .status .avatar img {
   border-radius: 2px;
 }
-/* line 39, ../../sass/dashboard.scss */
+/* line 43, ../../sass/dashboard.scss */
 .dashboard .status .content {
   overflow: hidden;
   padding-left: 10px;
 }
-/* line 43, ../../sass/dashboard.scss */
+/* line 47, ../../sass/dashboard.scss */
 .dashboard .status .content .author {
   font-weight: bold;
   display: block;

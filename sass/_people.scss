@@ -1,20 +1,20 @@
 .people {
   h3 {
     margin-top: 0;
-    color: #021139;
+    color: $brand-primary;
 
     span > small > a {
-      color: #021139;
+      color: $brand-primary;
     }
   }
 
   table {
-    border-top: 2px solid #021139;
+    border-top: 2px solid $brand-primary;
   }
 
   .person {
     a {
-      color: #021139;
+      color: $brand-primary;
     }
 
     td {

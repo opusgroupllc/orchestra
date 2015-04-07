@@ -20,7 +20,7 @@
             <div role="tabpanel" class="tab-pane active" id="write">
               <form id="new-status">
                 <div class="new-status">
-                  <textarea>I wanna be the very best, like no one ever was.</textarea>
+                  <textarea name="status" placeholder="wat up, y0?"></textarea>
                   <div class="buddy"><i class="fa fa-fw fa-map-marker"></i> Pentagon City, VA</div>
                 </div>
                 <button class="btn btn-primary text-center">Post status</button>
@@ -31,16 +31,20 @@
             </div>
           </div>
         </div><!-- /tabs -->
-        <div class="status">
-          <div class="avatar">
-            <img src="http://www.gravatar.com/avatar/?s=60&default=identicon" height="60" width="60" />
-          </div>
-          <div class="content">
-            <span class="author">Brick the Slab King</span>
-            <div class="">
-              SUP SLAB?
+        <div class="statuses">
+          <% _.each(statuses, function(status) { %>
+            <div class="status">
+              <div class="avatar">
+                <img src="http://www.gravatar.com/avatar/?s=60&default=identicon" height="60" width="60" />
+              </div>
+              <div class="content">
+                <span class="author"><%= status.user.username %></span>
+                <div class="">
+                  <%= status.message %>
+                </div>
+              </div>
             </div>
-          </div>
+          <% }); %>
         </div>
       </div>
     </div>
