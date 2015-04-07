@@ -34,16 +34,14 @@ var Chaplin = require('chaplin'),
       return this;
     },
 
+    refresh: function() {
+      this.$el.html(_.template(this.template, { statuses: this.statuses.toJSON() }));
+    },
+
     afterRender: function() {
       var self = this;
 
-      $(window).keydown(function(event) {
-        if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
-          $("#new-status").submit();
-        }
-      });
-
-      this.delegate('submit', '#new-status', function(e) {
+      this.delegate('submit', '#new-status', function(event) {
         event.preventDefault();
 
         var message = $("#new-status [name='status']").val();
@@ -54,9 +52,16 @@ var Chaplin = require('chaplin'),
         status.save({ message: message }, {
           success: function(status) {
             self.statuses.add(status.toJSON(), { at: 0 });
-            self.render();
+            self.refresh();
+            $("#new-status [name='status']").focus();
           }
         });
+      });
+
+      $(window).keydown(function(event) {
+        if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
+          $("#new-status").submit();
+        }
       });
     }
   });
