@@ -37,10 +37,18 @@ var Chaplin = require('chaplin'),
     afterRender: function() {
       var self = this;
 
+      $(window).keydown(function(event) {
+        if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
+          $("#new-status").submit();
+        }
+      });
+
       this.delegate('submit', '#new-status', function(e) {
         event.preventDefault();
 
         var message = $("#new-status [name='status']").val();
+
+        if (message.length === 0) return false;
 
         var status = new Status();
         status.save({ message: message }, {
