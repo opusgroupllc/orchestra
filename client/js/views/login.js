@@ -13,8 +13,7 @@ define(function(require) {
     password: null,
 
     initialize: function() {
-      // console.log('stuff.');
-      this.on('rendered', this.afterRender);
+      this.on('rendered', this.afterRender, this);
     },
 
     render: function() {

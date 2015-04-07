@@ -15,7 +15,7 @@ define(function(require) {
 
     logout: function() {
       mediator.logout();
-      Chaplin.utils.redirectTo({ url: 'login' });
+      window.location = '/';
     }
   });
 
