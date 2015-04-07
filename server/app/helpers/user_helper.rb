@@ -5,7 +5,11 @@ module Orchestra
   class App
     module UserHelper
       def sign_jwt(id)
-        JWT.encode({ _id: id, exp: (Time.now + 15.seconds).to_i }, 'hai');
+        JWT.encode({ _id: id, exp: (Time.now + 7.days).to_i }, 'hai')
+      end
+
+      def verify(token)
+        JWT.decode(token, 'hai')
       end
     end
 

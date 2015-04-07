@@ -18,8 +18,8 @@ define(['chaplin'], function(Chaplin) {
           }
         });
 
-        req.error(function(err) { return cb(err); });
-        req.success(function(user) { return cb(null, user) });
+        req.error(function(err) { window.localStorage.removeItem('token'); return cb(err); });
+        req.success(function(user) { return cb(null, user); });
       }
     });
 

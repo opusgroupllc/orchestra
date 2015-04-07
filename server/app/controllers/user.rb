@@ -1,12 +1,31 @@
 require_relative '../serializers/user_serializer.rb'
 
 Orchestra::App.controllers :user do
+
+  before :except => [:session, :preflight_me, :preflight_users] do
+    token ||= request.env['HTTP_AUTHORIZATION']
+    if token.nil?
+      error 401, { :error => "Unauthorized." }.to_json
+    else
+      token = token.split(' ').last unless token.nil?
+      begin
+        verify(token)
+      rescue JWT::ExpiredSignature
+        error 401, { :error => "Expired token." }.to_json
+      end
+    end
+  end
+
+  options :preflight_users, :map => '/api/v1/users' do
+    200
+  end
+
   get :index, :map => '/api/v1/users' do
     ActiveModel::ArraySerializer.new(User.all, each_serializer: UserSerializer).to_json
   end
 
-  options :me, :map => '/api/v1/users/me' do
-    { hello: 'world' }.to_json
+  options :preflight_me, :map => '/api/v1/users/me' do
+    200
   end
 
   get :me, :map => '/api/v1/users/me' do

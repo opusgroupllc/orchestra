@@ -5,6 +5,9 @@ define(function(require) {
       User = require('models/user'),
       mediator = require('mediator');
 
+  // load sync replacement
+  require('sync');
+
   var Application = Chaplin.Application.extend({
 
     initMediator: function() {
