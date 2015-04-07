@@ -1,4 +1,5 @@
 require 'webrick'
+require 'uri'
 
 class NonCachingFileHandler < WEBrick::HTTPServlet::FileHandler
   def prevent_caching(res)
@@ -10,7 +11,12 @@ class NonCachingFileHandler < WEBrick::HTTPServlet::FileHandler
   end
 
   def do_GET(req, res)
-    super
+    begin
+      super
+    rescue WEBrick::HTTPStatus::NotFound
+      uri = URI(res.request_uri)
+      res.set_redirect WEBrick::HTTPStatus::TemporaryRedirect, "/##{uri.path}"
+    end
     prevent_caching(res)
   end
 end
