@@ -9,12 +9,23 @@ var Chaplin = require('chaplin'),
     template: require('text!views/templates/dashboard_view.hbs'),
     className: 'dashboard',
 
+    initialize: function() {
+      this.$el.on('submit', 'form', this.post.bind(this));
+    },
+
     render: function() {
       this.$el.html(this.template);
       
       this.navbarView = new NavbarView();
       
       return this;
+    },
+
+    post: function(event) {
+      console.log('hai');
+
+      // prevent the form from submitting
+      event.preventDefault();
     }
   });
 

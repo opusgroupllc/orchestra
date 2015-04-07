@@ -1,6 +1,6 @@
 <div id="navbar"></div> 
 
-<section>
+<section class="dashboard">
   <div class="container">
     <div class="row">
       <div class="col-md-2">
@@ -11,8 +11,25 @@
         </ul>
       </div>
       <div class="col-md-10">
-        <div class="alert alert-success" role="alert">
-          <strong>Well done!</strong> You successfully read this important alert message.
+        <div class="tab-wrapper tab-primary" role="tabpanel">
+          <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#write" aria-controls="write" role="tab" data-toggle="tab">Write</a></li>
+            <li role="presentation"><a href="#preview" aria-controls="write" role="tab" data-toggle="tab">Preview</a></li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="write">
+              <form id="status">
+                <div class="status">
+                  <textarea>I wanna be the very best, like no one ever was.</textarea>
+                  <div class="buddy"><i class="fa fa-map-marker"></i> Pentagon City, VA</div>
+                </div>
+                <button class="btn btn-primary text-center">Post status</button>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="preview">
+              HO.
+            </div>
+          </div>
         </div>
       </div>
     </div>

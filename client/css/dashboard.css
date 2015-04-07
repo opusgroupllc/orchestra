@@ -1,0 +1,25 @@
+/* line 2, ../../sass/dashboard.scss */
+.dashboard .nav-tabs {
+  margin-bottom: 20px;
+}
+/* line 6, ../../sass/dashboard.scss */
+.dashboard .status {
+  margin-bottom: 10px;
+}
+/* line 9, ../../sass/dashboard.scss */
+.dashboard .status textarea:focus {
+  outline: 0px none transparent;
+}
+/* line 11, ../../sass/dashboard.scss */
+.dashboard .status textarea {
+  border: 1px solid #ddd;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
+  height: 63px;
+  padding: 12px 13px 0 13px;
+}
+/* line 19, ../../sass/dashboard.scss */
+.dashboard .status .buddy {
+  color: #767676;
+  font-size: 12px;
+}
