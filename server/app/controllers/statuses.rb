@@ -2,7 +2,7 @@ require_relative '../serializers/status_serializer.rb'
 
 Orchestra::App.controllers :statuses do
   get :index, :map => '/api/v1/statuses' do
-    ActiveModel::ArraySerializer.new(Status.all, each_serializer: StatusSerializer).to_json
+    ActiveModel::ArraySerializer.new(Status.all.order('id desc'), each_serializer: StatusSerializer).to_json
   end
 
   get :show, :map => '/api/v1/statuses/:id' do
@@ -15,8 +15,6 @@ Orchestra::App.controllers :statuses do
 
   post :new, :map => '/api/v1/statuses' do
     params = JSON.parse request.body.read
-
-    puts "hai."
 
     status = Status.new(params)
     status.user = User.find(1)

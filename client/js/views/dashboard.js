@@ -13,7 +13,7 @@ var Chaplin = require('chaplin'),
     initialize: function() {
       var self = this;
 
-      this.$el.on('submit', '#new-status', this.post);
+      this.on('rendered', this.afterRender, this);
 
       this.statuses = new Statuses();
 
@@ -28,20 +28,28 @@ var Chaplin = require('chaplin'),
       this.$el.html(_.template(this.template, { statuses: this.statuses.toJSON() }));
       
       this.navbarView = new NavbarView();
+
+      this.trigger('rendered');
       
       return this;
     },
 
-    post: function(event) {
-      // prevent the form from submitting
-      event.preventDefault();
+    afterRender: function() {
+      var self = this;
 
-      var message = $(this.status).val();
+      this.delegate('submit', '#new-status', function(e) {
+        event.preventDefault();
 
-      var status = new Status({ message: message });
-      status.save(status.toJSON);
+        var message = $("#new-status [name='status']").val();
 
-      console.log(status.get('message'));
+        var status = new Status();
+        status.save({ message: message }, {
+          success: function(status) {
+            self.statuses.add(status.toJSON(), { at: 0 });
+            self.render();
+          }
+        });
+      });
     }
   });
 
