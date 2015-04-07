@@ -10,7 +10,8 @@ define(function(require) {
   }
 
   mediator.logout = function() {
-    window.localStorage.removeItem('token')
+    this.user = null;
+    window.localStorage.removeItem('token');
   }
 
   return mediator;
