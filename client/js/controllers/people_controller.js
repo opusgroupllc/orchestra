@@ -2,17 +2,15 @@ define(function(require) {
   'use strict';
 
   var Chaplin = require('chaplin'),
+      Controller = require('controllers/base/controller'),
       PeopleView = require('views/people'),
       mediator = require('mediator');
 
-  var PeopleController = Chaplin.Controller.extend({
+  var PeopleController = Controller.extend({
     peopleView: null,
 
     index: function() {
-      if (!mediator.loggedIn()) {
-        Chaplin.utils.redirectTo({ url: 'login' });
-        return false;
-      }
+      if (!this.authenticated()) return false;
 
       this.peopleView = new PeopleView();
     }

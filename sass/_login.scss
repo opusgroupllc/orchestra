@@ -15,4 +15,15 @@
     display: table-cell;
     vertical-align: middle;
   }
+
+  ul {
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none !important;
+
+    li > a {
+      padding: 6px 12px;
+    }
+  }
 }

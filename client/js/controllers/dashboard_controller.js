@@ -2,17 +2,16 @@ define(function(require) {
   'use strict';
 
   var Chaplin = require('chaplin'),
+      Controller = require('controllers/base/controller'),
       DashboardView = require('views/dashboard'),
       mediator = require('mediator');
 
-  var DashboardController = Chaplin.Controller.extend({
+  var DashboardController = Controller.extend({
     dashboardView: null,
 
     index: function() {
-      if (!mediator.loggedIn()) {
-        Chaplin.utils.redirectTo({ url: 'login' });
-        return false;
-      }
+      if (!this.authenticated()) return false;
+
       this.dashboardView = new DashboardView();
     }
   });

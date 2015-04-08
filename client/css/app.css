@@ -8596,6 +8596,17 @@ html, body {
   display: table-cell;
   vertical-align: middle;
 }
+/* line 19, ../../sass/_login.scss */
+.login ul {
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  float: none !important;
+}
+/* line 25, ../../sass/_login.scss */
+.login ul li > a {
+  padding: 6px 12px;
+}
 
 /* line 2, ../../sass/_nav.scss */
 .orchestra-nav .navbar {

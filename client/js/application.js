@@ -18,8 +18,6 @@ define(function(require) {
       var self = this;
 
       User.me(function(err, user) {
-        if (err) return self.redirectToLogin();
-        
         mediator.user = user;
 
         self.router.startHistory();
@@ -28,6 +26,7 @@ define(function(require) {
     },
 
     redirectToLogin: function() {
+      console.log('meh');
       Chaplin.utils.redirectTo({ url: 'login' });
     }
   });
