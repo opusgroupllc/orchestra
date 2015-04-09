@@ -26,7 +26,6 @@ define(function(require) {
     },
 
     redirectToLogin: function() {
-      console.log('meh');
       Chaplin.utils.redirectTo({ url: 'login' });
     }
   });

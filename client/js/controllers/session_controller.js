@@ -5,12 +5,13 @@ define(function(require) {
       Controller = require('controllers/base/controller'),
       User = require('models/user'),
       LoginView = require('views/login'),
-      RegistrationView = require('views/registration'),
+      JoinView = require('views/join'),
+      SettingsView = require('views/settings'),
       mediator = require('mediator');
 
   var SessionController = Controller.extend({
     loginView: null,
-    registrationView: null,
+    joinView: null,
 
     new: function() {
       this.loginView = new LoginView();
@@ -23,8 +24,14 @@ define(function(require) {
       window.location = '/';
     },
 
-    register: function() {
-      this.registrationView = new RegistrationView();
+    join: function() {
+      this.joinView = new JoinView();
+    },
+
+    settings: function() {
+      if (!this.authenticated()) return false;
+
+      this.settingsView = new SettingsView();
     }
   });
 

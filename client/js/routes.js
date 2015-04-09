@@ -3,8 +3,9 @@ define(function() {
 
   return function(match) {
     match('login', 'session#new');
-    match('register', 'session#register')
+    match('join', 'session#join')
     match('logout', 'session#logout');
+    match('settings', 'session#settings')
     match('', 'dashboard#index');
     match('people', 'people#index');
   }

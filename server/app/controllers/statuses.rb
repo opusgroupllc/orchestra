@@ -2,6 +2,7 @@ require_relative '../serializers/status_serializer.rb'
 require_relative '../serializers/user_serializer.rb'
 
 Orchestra::App.controllers :statuses do
+
   before :except => [:index_preflight] do
     verify_token
   end

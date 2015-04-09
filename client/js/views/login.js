@@ -59,7 +59,7 @@ define(function(require) {
         return false;
       }
 
-      this.tryLogin();
+      this.tryToLogin();
       return true;
     },
 
@@ -68,7 +68,7 @@ define(function(require) {
       this.$('#status .message').text(message);
     },
 
-    tryLogin: function() {
+    tryToLogin: function() {
       var req = $.ajax({
         type: 'POST',
         url: 'http://localhost:4567/api/v1/users/' + this.username.val().trim() + '/sessions',
