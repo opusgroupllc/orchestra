@@ -1,3 +1,5 @@
+require 'jwt'
+
 module Orchestra
   class App < Padrino::Application
     use ConnectionPoolManagement
@@ -9,6 +11,25 @@ module Orchestra
     set :cross_origin, true
 
     enable :sessions
+
+    def verify(token)
+      JWT.decode(token, 'hai')
+    end
+
+    # all controllers must be able to verify auth tokens
+    def verify_token
+      token ||= request.env['HTTP_AUTHORIZATION']
+      if token.nil?
+        error 401, { :error => "Unauthorized." }.to_json
+      else
+        token = token.split(' ').last unless token.nil?
+        begin
+          verify(token)
+        rescue JWT::ExpiredSignature
+          error 401, { :error => "Expired token." }.to_json
+        end
+      end
+    end
 
     ##
     # Caching support.
