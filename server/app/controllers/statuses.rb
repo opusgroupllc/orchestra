@@ -22,7 +22,7 @@ Orchestra::App.controllers :statuses do
     params = JSON.parse request.body.read
 
     status = Status.new(params)
-    status.user = User.find(1)
+    status.user = current_user
 
     if status.save
       StatusSerializer.new(status, root: false).to_json

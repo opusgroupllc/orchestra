@@ -13,7 +13,8 @@ module Orchestra
     enable :sessions
 
     def verify(token)
-      JWT.decode(token, 'hai')
+      payload = JWT.decode(token, 'hai')
+      User.find(payload.first["_id"])
     end
 
     # all controllers must be able to verify auth tokens
@@ -24,11 +25,15 @@ module Orchestra
       else
         token = token.split(' ').last unless token.nil?
         begin
-          verify(token)
+          @user = verify(token)
         rescue JWT::ExpiredSignature
           error 401, { :error => "Expired token." }.to_json
         end
       end
+    end
+
+    def current_user
+      @user
     end
 
     ##

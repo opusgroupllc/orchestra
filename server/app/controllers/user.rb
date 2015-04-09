@@ -19,7 +19,7 @@ Orchestra::App.controllers :user do
   end
 
   get :me, :map => '/api/v1/users/me' do
-    UserSerializer.new(User.find(1), root: false).to_json
+    UserSerializer.new(current_user, root: false).to_json
   end
 
   get :show, :map => '/api/v1/users/:id' do
