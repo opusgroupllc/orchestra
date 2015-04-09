@@ -2,6 +2,8 @@
 
 > Orchestra is a developer communication and information tool loosely based on Github's internal Team.
 
+* [API Documentation](http://opusgroupllc.github.io/orchestra-api-docs/#introduction)
+
 ## How its Made
 ### Front End Client
 [Chaplin.js](http://chaplinjs.org/) and [Backbone.js](http://backbonejs.org/)
