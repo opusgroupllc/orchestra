@@ -16,3 +16,11 @@ $ bundle install
 $ padrino rake db:migrate seed
 $ pardino start
 ```
+
+The API is secured using JWT.  Run the seed file to add a default user.
+
+```shell
+$ rake db:seed
+#=> test@test.com # email
+#=> test #password
+```
