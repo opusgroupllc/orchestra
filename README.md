@@ -10,6 +10,7 @@
 We use [Padrino](http://www.padrinorb.com/) for the backend API.
 
 ```shell
+$ cd server
 $ bundle install
 $ padrino rake db:migrate seed
 $ pardino start

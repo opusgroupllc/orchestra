@@ -30,8 +30,8 @@ Orchestra::App.controllers :user do
     render plain: 'OK'
   end
 
-  post :session, :map => '/api/v1/users/:username/sessions' do
-    user = User.find_by_email(params[:username])
+  post :session, :map => '/api/v1/users/sessions' do
+    user = User.find_by_email(params[:email])
 
     if user and user.password == params[:password]
       { token: sign_jwt(user.id) }.to_json
