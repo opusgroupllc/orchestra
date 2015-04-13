@@ -7,9 +7,7 @@
 [Chaplin.js](http://chaplinjs.org/) and [Backbone.js](http://backbonejs.org/)
 
 ### Backend API
-- [Padrino](http://www.padrinorb.com/)
-- [API Documentation](http://opusgroupllc.github.io/orchestra-api-docs/#introduction)
-
+We use [Padrino](http://www.padrinorb.com/) for the backend API.
 
 ```shell
 $ bundle install
@@ -24,3 +22,6 @@ $ rake db:seed
 #=> test@test.com # email
 #=> test #password
 ```
+
+#### API Documentation
+ Now that you are up and running, check out the [API Documentation](http://opusgroupllc.github.io/orchestra-api-docs/#introduction).
