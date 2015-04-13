@@ -3,7 +3,7 @@ define(function(require) {
 var Chaplin = require('chaplin'),
     NavbarView = require('views/navbar'),
     Status = require('models/status'),
-    Statuses = require('models/statuses'),
+    StatusCollection = require('models/status_collection'),
     View = require('views/base/view');
 
   var DashboardView = View.extend({
@@ -15,9 +15,11 @@ var Chaplin = require('chaplin'),
 
       this.on('rendered', this.afterRender, this);
 
-      this.statuses = new Statuses();
+      this.statusCollection = new StatusCollection();
 
-      this.statuses.fetch({
+      window.x = new StatusCollection();
+
+      this.statusCollection.fetch({
         success: function() {
           self.render();
         }
@@ -26,7 +28,7 @@ var Chaplin = require('chaplin'),
 
     render: function() {
 
-      this.$el.html(_.template(this.template, { statuses: this.statuses.toJSON() }));
+      this.$el.html(_.template(this.template, { statuses: this.statusCollection.toJSON() }));
       
       this.navbarView = new NavbarView();
 
@@ -36,7 +38,7 @@ var Chaplin = require('chaplin'),
     },
 
     refresh: function() {
-      this.$el.html(_.template(this.template, { statuses: this.statuses.toJSON() }));
+      this.$el.html(_.template(this.template, { statuses: this.statusCollection.toJSON() }));
     },
 
     afterRender: function() {
@@ -58,7 +60,7 @@ var Chaplin = require('chaplin'),
       var status = new Status();
       status.save({ message: message }, {
         success: function(status) {
-          self.statuses.add(status.toJSON(), { at: 0 });
+          self.statusCollection.add(status.toJSON(), { at: 0 });
           self.refresh();
           $("#new-status [name='status']").focus();
         }

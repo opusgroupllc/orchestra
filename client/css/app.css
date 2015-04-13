@@ -8671,36 +8671,37 @@ html, body {
 .dashboard .new-status textarea {
   border: 1px solid #ddd;
   width: 100%;
+  max-width: 100%;
   -webkit-box-shadow: inset 0px 0px 2px 0px rgba(0, 0, 0, 0.05);
   height: 63px;
   padding: 12px 13px 0 13px;
 }
-/* line 23, ../../sass/_dashboard.scss */
+/* line 24, ../../sass/_dashboard.scss */
 .dashboard .new-status .buddy {
   color: #767676;
   font-size: 12px;
 }
-/* line 29, ../../sass/_dashboard.scss */
+/* line 30, ../../sass/_dashboard.scss */
 .dashboard .status {
   display: inline-block;
   margin-bottom: 20px;
   width: 100%;
 }
-/* line 34, ../../sass/_dashboard.scss */
+/* line 35, ../../sass/_dashboard.scss */
 .dashboard .status .avatar {
   float: left;
   width: 60px;
 }
-/* line 38, ../../sass/_dashboard.scss */
+/* line 39, ../../sass/_dashboard.scss */
 .dashboard .status .avatar img {
   border-radius: 2px;
 }
-/* line 43, ../../sass/_dashboard.scss */
+/* line 44, ../../sass/_dashboard.scss */
 .dashboard .status .content {
   overflow: hidden;
   padding-left: 10px;
 }
-/* line 47, ../../sass/_dashboard.scss */
+/* line 48, ../../sass/_dashboard.scss */
 .dashboard .status .content .author {
   font-weight: bold;
   display: block;
