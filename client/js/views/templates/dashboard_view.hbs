@@ -46,29 +46,32 @@
                     background-color: #f5f5f5;
                     box-sizing: border-box;
                     border: 1px solid #ccc;">
-                  <li style="padding: 10px 10px 0; margin: 0;">
-                    <img src="http://www.gravatar.com/avatar/366d95ab4984162d53d9477d17850298?s=32&amp;default=identicon"style="float: left;">
-                    <div style="display: block; overflow: hidden; padding-left: 10px;">
-                      <span style="
-                        height: 32px;
-                        overflow: hidden;
-                        width: 100%;
-                        padding: 0 5px;
-                        outline: none;
-                        box-sizing: border-box;"><strong>Joshua K. Farrar</strong> lol, i love cats too!<span>
-                    </div>
-                  </li>
+                    <% _.each(status.comments, function(comment) { %>
+                      <li style="padding: 10px 10px 0; margin: 0;">
+                        <img src="http://www.gravatar.com/avatar/?s=32&amp;default=identicon"style="float: left;">
+                        <div style="display: block; overflow: hidden; padding-left: 10px;">
+                          <span style="
+                            height: 32px;
+                            overflow: hidden;
+                            width: 100%;
+                            padding: 0 5px;
+                            outline: none;
+                            box-sizing: border-box;"><strong>Joshua K. Farrar</strong> lol, i love cats too!<span>
+                        </div>
+                      </li>
+                    <% }); %>
 
-                  <li style="padding: 10px; margin-top: 10px;">
-                    <img src="http://www.gravatar.com/avatar/366d95ab4984162d53d9477d17850298?s=32&amp;default=identicon"style="float: left;">
+                  <li style="padding: 10px;">
+                    <img src="http://www.gravatar.com/avatar/?s=32&amp;default=identicon"style="float: left;">
                     <div style="display: block; overflow: hidden; padding-left: 10px;">
-                      <input placeholder="Write a comment..." type="text" style="
+                      <input class="new-comment" id="<%= status.id %>" placeholder="Write a comment..." type="text" style="
                         height: 32px;
                         overflow: hidden;
                         width: 100%;
                         padding: 0 5px;
                         outline: none;
-                        box-sizing: border-box;">
+                        box-sizing: border-box;
+                        font-size: 13px;">
                     </div>
                   </li>
                 </ul>

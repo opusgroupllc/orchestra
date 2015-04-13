@@ -46,6 +46,7 @@ var Chaplin = require('chaplin'),
 
       this.delegate('submit', '#new-status', this.post);
       this.delegate('keydown', '#new-status [name="status"]', this.keyDown);
+      this.delegate('keydown', '.new-comment', this.checkComment);
     },
 
     post: function(e) {
@@ -71,7 +72,18 @@ var Chaplin = require('chaplin'),
       if ((e.metaKey || e.ctrlKey) && e.keyCode == 13) {
         $("#new-status").submit();
       }
-    }
+    },
+
+    checkComment: function(e) {
+      if (e.keyCode == 13) {
+        var input = $(e.currentTarget);
+        this.newComment(input.attr('id'), input.val());
+      }
+    },
+
+    newComment: function(status, message) {
+      console.log(status, message);
+    },
   });
 
   return DashboardView;

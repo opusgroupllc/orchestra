@@ -13,7 +13,6 @@ define(function(require) {
     render: function() {
       this.$el.html(_.template(this.template, { me: mediator.user }));
       this.navbarView = new NavbarView();
-
       return this;
     }
   });
