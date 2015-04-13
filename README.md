@@ -7,8 +7,8 @@
 [Chaplin.js](http://chaplinjs.org/) and [Backbone.js](http://backbonejs.org/)
 
 ### Backend API
-[Padrino](http://www.padrinorb.com/)
-[API Documentation](http://opusgroupllc.github.io/orchestra-api-docs/#introduction)
+- [Padrino](http://www.padrinorb.com/)
+- [API Documentation](http://opusgroupllc.github.io/orchestra-api-docs/#introduction)
 
 
 ```shell
