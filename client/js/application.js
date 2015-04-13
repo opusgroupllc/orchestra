@@ -23,10 +23,6 @@ define(function(require) {
         self.router.startHistory();
         self.started = true;
       });
-    },
-
-    redirectToLogin: function() {
-      Chaplin.utils.redirectTo({ url: 'login' });
     }
   });
 

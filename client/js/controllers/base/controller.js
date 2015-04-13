@@ -7,10 +7,14 @@ define(function(require) {
   var Controller = Chaplin.Controller.extend({
     authenticated: function() {
       if (!mediator.loggedIn()) {
-        Chaplin.utils.redirectTo({ url: 'login' });
+        this.redirectToLogin();
         return false;
       }
       return true;
+    },
+
+    redirectToLogin: function() {
+      Chaplin.utils.redirectTo({ url: 'login' });
     }
   });
 
