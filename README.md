@@ -13,7 +13,7 @@ We use [Padrino](http://www.padrinorb.com/) for the backend API.
 $ cd server
 $ bundle install
 $ padrino rake db:migrate seed
-$ pardino start
+$ padrino start
 ```
 
 The API is secured using JWT.  Run the seed file to add a default user.
