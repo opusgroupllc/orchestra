@@ -12,7 +12,7 @@ Orchestra::App.controllers :statuses do
   end
 
   get :index, :map => '/api/v1/statuses' do
-    ActiveModel::ArraySerializer.new(Status.all.order('id desc'), each_serializer: StatusSerializer, user: UserSerializer).to_json
+    ActiveModel::ArraySerializer.new(Status.all.order('id desc'), each_serializer: StatusSerializer).to_json
   end
 
   get :show, :map => '/api/v1/statuses/:id' do
