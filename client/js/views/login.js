@@ -71,8 +71,8 @@ define(function(require) {
     tryToLogin: function() {
       var req = $.ajax({
         type: 'POST',
-        url: 'http://localhost:4567/api/v1/users/' + this.username.val().trim() + '/sessions',
-        data: { password: this.password.val().trim() },
+        url: 'http://localhost:4567/api/v1/users/sessions',
+        data: { email: this.username.val().trim(), password: this.password.val().trim() },
         dataType: 'json'
       });
       req.error(this.authError.bind(this));
