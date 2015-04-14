@@ -1,3 +1,5 @@
+require_relative '../serializers/comment_serializer.rb'
+
 Orchestra::App.controllers :comments do
 
   before :except => [:index_preflight] do

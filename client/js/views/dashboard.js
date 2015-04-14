@@ -38,7 +38,13 @@ var Chaplin = require('chaplin'),
     },
 
     refresh: function() {
-      this.$el.html(_.template(this.template, { statuses: this.statusCollection.toJSON() }));
+      var self = this;
+
+      this.statusCollection.fetch({
+        success: function() {
+          self.$el.html(_.template(self.template, { statuses: self.statusCollection.toJSON() }));
+        }
+      });
     },
 
     afterRender: function() {
@@ -82,8 +88,14 @@ var Chaplin = require('chaplin'),
     },
 
     newComment: function(status, message) {
+      var self = this;
+
       var status = this.statusCollection.get(status);
-      status.comment(message);
+      status.comment(message, function(saved) {
+        if (saved) {
+          self.refresh();
+        }
+      });
     },
   });
 
