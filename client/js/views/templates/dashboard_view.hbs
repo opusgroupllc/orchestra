@@ -32,13 +32,13 @@
         </div><!-- /tabs -->
         <div class="statuses">
           <% _.each(statuses, function(status) { %>
-            <div class="status" style="padding-left: 10px; border-left: 2px solid #ccc;">
+            <div class="status">
               <div class="avatar">
                 <img src="http://www.gravatar.com/avatar/?s=60&default=identicon" height="60" width="60" />
               </div>
               <div class="content">
-                <span class="author"><%= status.user.full_name %></span>
-                <div style="margin-bottom: 10px;">
+                <span class="author"><a href="#"><%= status.user.full_name %></a></span>
+                <div class="message">
                   <%= status.message %>
                 </div>
                 <ul style="list-style: none;
@@ -56,7 +56,7 @@
                             width: 100%;
                             padding: 0 5px;
                             outline: none;
-                            box-sizing: border-box;"><strong><%= comment.user.full_name %></strong> <%= comment.message %><span>
+                            box-sizing: border-box;"><strong><a href="#" style="color: #000;"><%= comment.user.full_name %></a></strong> <%= comment.message %><span>
                         </div>
                       </li>
                     <% }); %>

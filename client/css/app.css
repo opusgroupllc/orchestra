@@ -8686,26 +8686,36 @@ html, body {
   display: inline-block;
   margin-bottom: 20px;
   width: 100%;
+  padding-left: 10px;
+  border-left: 2px solid #ccc;
 }
-/* line 35, ../../sass/_dashboard.scss */
+/* line 41, ../../sass/_dashboard.scss */
 .dashboard .status .avatar {
   float: left;
   width: 60px;
 }
-/* line 39, ../../sass/_dashboard.scss */
+/* line 45, ../../sass/_dashboard.scss */
 .dashboard .status .avatar img {
   border-radius: 2px;
 }
-/* line 44, ../../sass/_dashboard.scss */
+/* line 50, ../../sass/_dashboard.scss */
 .dashboard .status .content {
   overflow: hidden;
   padding-left: 10px;
 }
-/* line 48, ../../sass/_dashboard.scss */
+/* line 54, ../../sass/_dashboard.scss */
 .dashboard .status .content .author {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
+}
+/* line 59, ../../sass/_dashboard.scss */
+.dashboard .status .content .author a {
+  color: #000;
+}
+/* line 64, ../../sass/_dashboard.scss */
+.dashboard .status .content .message {
+  margin-bottom: 10px;
 }
 
 /* line 2, ../../sass/_people.scss */

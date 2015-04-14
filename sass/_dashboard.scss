@@ -31,7 +31,13 @@
     display: inline-block;
     margin-bottom: 20px;
     width: 100%;
-    
+    padding-left: 10px;
+    border-left: 2px solid #ccc;
+
+    // &:hover {
+    //   border-left: 2px solid $brand-primary !important;
+    // }
+
     .avatar {
       float: left;
       width: 60px;
@@ -49,6 +55,14 @@
         font-weight: bold;
         display: block;
         margin-bottom: 5px;
+
+        a {
+          color: #000;
+        }
+      }
+
+      .message {
+        margin-bottom: 10px;
       }
     }
   }
