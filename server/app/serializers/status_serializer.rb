@@ -1,3 +1,3 @@
 class StatusSerializer < ActiveModel::Serializer
-  attributes :id, :message, :user
+  attributes :id, :message, :user, :comments
 end

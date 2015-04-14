@@ -82,7 +82,8 @@ var Chaplin = require('chaplin'),
     },
 
     newComment: function(status, message) {
-      console.log(status, message);
+      var status = this.statusCollection.get(status);
+      status.comment(message);
     },
   });
 
