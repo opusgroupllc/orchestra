@@ -47,16 +47,17 @@
                     box-sizing: border-box;
                     border: 1px solid #ccc;">
                     <% _.each(status.comments, function(comment) { %>
-                      <li style="padding: 10px 10px 0; margin: 0 0 10px;">
-                        <img src="http://www.gravatar.com/avatar/?s=32&amp;default=identicon"style="float: left;">
+                      <li style="padding: 10px 10px 0;">
+                        <img src="http://www.gravatar.com/avatar/?s=32&amp;default=identicon" style="float: left;">
                         <div style="display: block; overflow: hidden; padding-left: 10px;">
                           <span style="
-                            height: 32px;
+                            display: block;
                             overflow: hidden;
                             width: 100%;
                             padding: 0 5px;
                             outline: none;
-                            box-sizing: border-box;"><strong><a href="#" style="color: #000;"><%= comment.user.full_name %></a></strong> <%= comment.message %><span>
+                            box-sizing: border-box;"><strong><a href="#" style="color: #000;"><%= comment.user.full_name %></a></strong> <%= comment.message %></span>
+                            <span class="links"><a id="comment_<%= comment.id %>" href="#" class="delete">Delete</a></span>
                         </div>
                       </li>
                     <% }); %>

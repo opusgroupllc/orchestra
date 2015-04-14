@@ -4,6 +4,7 @@ var Chaplin = require('chaplin'),
     NavbarView = require('views/navbar'),
     Status = require('models/status'),
     StatusCollection = require('models/status_collection'),
+    Comment = require('models/comment'),
     View = require('views/base/view');
 
   var DashboardView = View.extend({
@@ -52,6 +53,27 @@ var Chaplin = require('chaplin'),
       this.delegate('submit', '#new-status', this.post);
       this.delegate('keydown', '#new-status [name="status"]', this.keyDown);
       this.delegate('keydown', '.new-comment', this.checkComment);
+      this.delegate('click', '.links .delete', this.handleDelete);
+    },
+
+    handleDelete: function(e) {
+      e.preventDefault();
+
+      var input = $(e.currentTarget),
+          commentId = input.attr('id').split("_")[1];
+
+      this.deleteComment(commentId);
+    },
+
+    deleteComment: function(id) {
+      var self = this;
+
+      var comment = new Comment({ id: id });
+      comment.destroy({
+        success: function(model, res) {
+          self.refresh();
+        }
+      });
     },
 
     post: function(e) {

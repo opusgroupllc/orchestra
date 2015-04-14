@@ -8717,6 +8717,15 @@ html, body {
 .dashboard .status .content .message {
   margin-bottom: 10px;
 }
+/* line 68, ../../sass/_dashboard.scss */
+.dashboard .status .content .links {
+  padding: 0 5px;
+  font-size: 12px;
+}
+/* line 72, ../../sass/_dashboard.scss */
+.dashboard .status .content .links a {
+  color: #476bcc;
+}
 
 /* line 2, ../../sass/_people.scss */
 .people h3 {

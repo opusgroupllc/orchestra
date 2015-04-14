@@ -9,6 +9,7 @@ module Orchestra
     register Sinatra::CrossOrigin
 
     set :cross_origin, true
+    set :allow_methods, [:post, :get, :options, :delete]
 
     enable :sessions
 
