@@ -27,7 +27,6 @@ var Chaplin = require('chaplin'),
     },
 
     render: function() {
-
       this.$el.html(_.template(this.template, { statuses: this.statusCollection.toJSON() }));
       
       this.navbarView = new NavbarView();
