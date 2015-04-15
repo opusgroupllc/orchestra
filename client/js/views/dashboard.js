@@ -18,8 +18,6 @@ var Chaplin = require('chaplin'),
 
       this.statusCollection = new StatusCollection();
 
-      window.x = new StatusCollection();
-
       this.statusCollection.fetch({
         success: function() {
           self.render();
@@ -29,7 +27,7 @@ var Chaplin = require('chaplin'),
 
     render: function() {
       this.$el.html(_.template(this.template, { statuses: this.statusCollection.toJSON() }));
-      
+
       this.navbarView = new NavbarView();
 
       this.trigger('rendered');
