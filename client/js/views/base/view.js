@@ -1,4 +1,8 @@
-define(['handlebars', 'chaplin'], function(Handlebars, Chaplin) {
+define(function(require) {
+
+  var Chaplin = require('chaplin'),
+      Handlebars = require('handlebars');
+
   var View = Chaplin.View.extend({
     container: "body",
 
