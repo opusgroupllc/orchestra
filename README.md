@@ -23,6 +23,5 @@ $ rake db:seed
 #=> test@test.com # email
 #=> test #password
 ```
-
 #### API Documentation
  Now that you are up and running, check out the [API Documentation](http://opusgroupllc.github.io/orchestra-api-docs/#introduction).
